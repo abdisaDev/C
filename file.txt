@@ -1,1 +1,0 @@
-This is abdisa testing file discriptor in c;
