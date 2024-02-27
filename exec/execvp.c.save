@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <unist.h>
+
+int main(void)
+{
+	execvp("./execDemo.c", 
