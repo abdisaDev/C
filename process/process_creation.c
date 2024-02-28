@@ -6,7 +6,7 @@ int main (void)
 {
     pid_t pid, mypid, myppid;
     pid = getpid();
-    printf("Before fork(): calling process id is %d --- %d\nP1 ID:- %d\n\n", pid, getpid(),getppid());
+    printf("Before fork(): calling process id is %d --- %d\n\n", pid, getppid());
     pid = fork();
 
     if (pid < 0){
@@ -16,19 +16,19 @@ int main (void)
 
     if (pid == 0)
     {
-        printf("calling process\n");
+        printf("child calling process\n");
         mypid = getpid();
         myppid = getppid();
         printf("+++ C4 ID:- %d\n", mypid);
         printf("+++ P4 ID:- %d\n\n", myppid);
     } else {
-        printf("calling process\n");
+        printf("dup calling process\n");
+        printf("c3 ID:- %d\n\n", pid);
         mypid = getpid();
         myppid = getppid();
         printf("c2 ID:- %d\n", mypid);
         printf("P2 ID:- %d\n", myppid);
-        printf("c3 ID:- %d\n\n", pid);
     }
-    
+    printf("running on %d\n",getpid());
     return (0);
 }
